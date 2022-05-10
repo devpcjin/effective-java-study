@@ -84,7 +84,7 @@
   ​	(위의 예제는 람다식 외부의 클래스 멤버인 메소드를 호출한 경우)
   ​	여기에 더해서 다음과 같이 **람다식에서 제공되는 a 매개변수의 메소드**를 호출해서 **b 매개변수의 매개값**으로 사용하는 경우도 있다.
 ```java
-		(a,b) -> {a.instanceMethod(b)}
+(a,b) -> {a.instanceMethod(b)}
 ```
 이를 메소드 참조로 표현하면, 
 ```java
@@ -213,12 +213,11 @@ System.out.println(Arrays.toString(names));								//[maru, megu, naki]
 
 - `Comparator.java`
 
-- ![image-20220510134446060](C:\Users\yezi\AppData\Roaming\Typora\typora-user-images\image-20220510134446060.png) 
+- ![image](https://user-images.githubusercontent.com/93200574/167589615-b5a17e52-0fc9-4dd0-a789-6a55ca3f85b2.png) 
 
 - `String.java`
 
-  ![image-20220510133820962](C:\Users\yezi\AppData\Roaming\Typora\typora-user-images\image-20220510133820962.png) 
-
+- ![image](https://user-images.githubusercontent.com/93200574/167599601-62015b14-5145-468c-b24f-058a86c618a4.png)
   
 
 
