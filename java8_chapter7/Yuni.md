@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ### @FunctionalInterface
 - When we use a SAM interface to be used by lambdas
 ```java
@@ -35,6 +38,9 @@ public interface Adder {
 
 
 
+
+
+
 ### @Native
  - only applicable to fields
  - the annotated field is a constant that may be referenced from the native code
@@ -48,7 +54,11 @@ public final class Integer {
 
 
 
+
+
+
 ## Meta-Annotations
+
 
 ### @Target
  - consumed with constructor and field declarations.
@@ -59,6 +69,9 @@ public final class Integer {
 public @interface SafeVarargs {
 }
 ```
+
+
+
 
 
 
@@ -75,6 +88,9 @@ public @interface SafeVarargs {
 public @interface RetentionAnnotation {
 }
 ```
+
+
+
 
 
 
@@ -108,6 +124,9 @@ public void whenAnnotationInherited_thenShouldExist() {
 
 
 
+
+
+
 ### @Repeatable
 Before, we had to group annotations together into a single container annotation:
 ```java
@@ -128,6 +147,35 @@ public @interface Schedule {
 ```
 
 
+
+
+
+
+# Arrays.sort vs Arrays.parallelSort
+
+
+## Arrays.sort()
+- single-threaded with two variants
+1. sort(array) – sorts the full array into ascending order
+2. sort(array, fromIndex, toIndex) – sorts only the elements from fromIndex to toIndex
+
+(-)
+
+
+ - Performance degrades for large datasets
+ - Multiple cores of the system aren't utilized
+
+
+
+
+## Arrays.parallelSort()
+ - uses a parallel sort-merge sorting algorithm. Breaks the array into sub-arrays that are themselves sorted and then merged.
+ 
+
+(-)
+
+
+ - Slower for smaller size arrays
 
 ### reference
  - https://www.baeldung.com/java-default-annotations
