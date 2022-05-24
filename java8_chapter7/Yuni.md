@@ -177,6 +177,11 @@ public @interface Schedule {
 
  - Slower for smaller size arrays
 
+
+
+
+
+
 ### reference
  - https://www.baeldung.com/java-default-annotations
  - https://www.infoq.com/articles/Type-Annotations-in-Java-8/#:~:text=With%20Java%208%2C%20annotations%20can,of%20the%20new%20Java%20release.
