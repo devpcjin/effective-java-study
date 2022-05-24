@@ -5,6 +5,8 @@
 2. Manipulate source code at compilation time
 3. Modify or examine behavior at runtime
 
+
+
 ### @FunctionalInterface
 - When we use a SAM interface to be used by lambdas
 ```java
@@ -31,6 +33,8 @@ public interface Adder {
 ```
  - Even though it's legal to have more than one method on an interface, it isn't when that interface is being used as a lambda target. Without this annotation, the compiler would break in the dozens of places where Adder was used as a lambda. Now, it just breaks in Adder itself.
 
+
+
 ### @Native
  - only applicable to fields
  - the annotated field is a constant that may be referenced from the native code
@@ -55,6 +59,8 @@ public @interface SafeVarargs {
 }
 ```
 
+
+
 ### @Retention
  - some annotations used as hints for the compiler, while others are used at runtime.
  - tells where in our program's lifecycle our annotation applies
@@ -68,6 +74,8 @@ public @interface SafeVarargs {
 public @interface RetentionAnnotation {
 }
 ```
+
+
 
 ### @Inherited
  - subclass bound to a parent class
@@ -97,6 +105,8 @@ public void whenAnnotationInherited_thenShouldExist() {
 }
 ```
 
+
+
 ### @Repeatable
 Before, we had to group annotations together into a single container annotation:
 ```java
@@ -115,6 +125,8 @@ public @interface Schedule {
     String time() default "09:00";
 }
 ```
+
+
 
 ### reference
 https://www.baeldung.com/java-default-annotations /n
