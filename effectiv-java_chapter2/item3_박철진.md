@@ -97,3 +97,43 @@
             Elvis elvis = elvisSupplier.get();
             // 메서드에 대한 레퍼런스를 `Supplier`타입으로 만듦.
             ```
+
+-  두가지 방식의 문제점
+
+    - 각 클래스를 직렬화한 후 역직렬화할 때 새로운 인스턴스를 만들어서 반환
+        - 역직렬화는 기본 생성자를 호출하지 않고 값을 복사해서 새로운 인스턴스를 반환
+            - 직렬화 : 객체를 직렬화하여 전송 가능한 형태로 만드는 것을 의미
+            - 역직렬화 : 직렬화된 파일 등을 역으로 직렬화하여 다시 객체의 형태로 만드는 것
+
+    - 해결
+        - 역직렬화할 때마다 새로운 인스턴스가 만들어지는 것을 예방하려면 `readResolve`메서드를 추가
+        ```java
+        private Obejct readResolve() {
+            return INSTANCE;
+        }
+        // 진짜 Elvis는 반환하고 가짜 Elvis는 GC에 맡긴다
+        ```
+    
+3. 원소가 하나인 열거 타입을 선언하는 방식
+-  대부분의 상황에서 원소가 하나뿐인 열거 타입이 싱글턴을 만드는 가장 좋은 방법
+    ```java
+    public enum Elvis {
+        INSTANCE; 
+        
+        public String getName() {
+            return "Elvis";
+        }
+
+        public void leaveTheBuilding() { ... }
+    }
+    ```
+
+    ```java
+    String name = Elvis.INSTANCE.getName();
+    ```
+
+    - Elvis 타입의 인스턴스는 `INSTANCE`하나 뿐 더이상 만들 수 없음
+    - 복잡한 직렬화 상황이나 리플렉션 공격에도 제 2의 인스턴스가 생기는 일을 완벽히 차단
+
+    - 단, 만들려는 싱글턴이 Enum외의 클래스를 상속해야 한다면 이 방법은 사용할 수 없음
+        - 열거타입이 다른 인터페이스를 구현하도록 선언할 수는 있음
