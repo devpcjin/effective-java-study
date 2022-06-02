@@ -93,6 +93,9 @@ public class RomanNumber {
 
 Map 인터페이스가 제공하는 keySet은 Map이 뒤에 있는 Set 인터페이스의 뷰를 제공한다. keySet을 호출할 때마다 새로운 객체가 나올거 같지만 사실 같은 객체를 리턴하기 때문에 리턴 받은 Set 타입의 객체를 변경하면, 결국에 그 뒤에 있는 Map 객체를 변경하게 된다.
 
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/93200574/171587947-d36424b5-a73b-42bf-9e7f-ccc5ef4a0720.png">
+
+
 ```java
 public class UsingKeySet {
 
