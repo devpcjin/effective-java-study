@@ -119,19 +119,34 @@ public class UsingKeySet {
 **오토박싱은 프리미티브 타입과 박스 타입의 경계가 안보이게 해주지만 그렇다고 그 경계를 없애주진 않는다.**
 
 ```java
-public class AutoBoxingExample {
-
-    public static void main(String[] args) {
-        long start = System.currentTimeMillis();
-        Long sum = 0l;
-        for (long i = 0 ; i <= Integer.MAX_VALUE ; i++) {
-            sum += i;
+ public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        Long sum = 0L;
+        for(long i=0; i<Integer.MAX_VALUE; i++){
+            sum+=i;
         }
-        System.out.println(sum);
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println("Long sum : " + sum);
+
+        long endTime = System.currentTimeMillis();
+        long badPlayTime = endTime - startTime;
+
+        startTime = System.currentTimeMillis();
+        long sum2 = 0L;
+        for(long i=0; i<Integer.MAX_VALUE; i++){
+            sum2+=i;
+        }
+
+        System.out.println("long sum : " + sum2);
+
+        endTime = System.currentTimeMillis();
+        long goodPlayTime = endTime - startTime;
+
+        System.out.println("Bad play Time : " + badPlayTime + "ms" );
+        System.out.println("Good play Time : " + goodPlayTime + "ms" );
     }
-}
 ```
+<img width="247" alt="image" src="https://user-images.githubusercontent.com/93200574/171585870-b12f8bb3-a43e-4962-9b28-ec230dd2e7c4.png">
+
 
 위 코드에서 `sum` 변수의 타입을 `Long`으로 만들었기 때문에 불필요한 Long 객체를 2의 31 제곱개 만큼 만들게 되고 대략 6초 조금 넘게 걸린다. 타입을 프리미티브 타입으로 바꾸면 600 밀리초로 약 10배 이상의 차이가 난다.
 
