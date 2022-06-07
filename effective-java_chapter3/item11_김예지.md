@@ -18,6 +18,7 @@ hashCode 재정의를 잘못했을 때 크게 문제가 되는 조항은 2번.
 
 
 ## hashCode() 재정의 예시
+![image](https://user-images.githubusercontent.com/93200574/172352415-3979104e-3f89-4141-b07d-10fbf8cd787d.png)
 
 ```java
 @RunWith(JUnit4.class)
