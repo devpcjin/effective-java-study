@@ -147,6 +147,7 @@ public int hashCode() {
     - 내부적으로 AutoBoxing이 일어나 성능이 떨어진다.
 - Lombok의 @EqualsAndHashCode
 - Google의 @AutoValue
+- [참고](https://tecoble.techcourse.co.kr/post/2020-07-29-equals-and-hashCode/)
 
 ## hashCode()를 재정의할 때 고려할 점
 - 불변 객체에 대해서는 hashcode 생성비용이 많이 든다면, hashcode를 캐싱하는 것도 고려하자
